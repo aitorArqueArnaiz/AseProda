@@ -5,6 +5,7 @@ using AseProda.Domain.Responses.Estados;
 using AseProda.Domain.Services;
 using FluentAssertions;
 using NUnit.Framework;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -67,7 +68,7 @@ namespace AseProda.Test
         }
 
         [Test]
-        [Description("Test intended to check the correct behaviour of prefijar precio del surtidor logics.")]
+        [Description("Test intended to check the correct behaviour of obtener estado del surtidor logics.")]
         public async Task Obtener_Estado_Surtidor_Test()
         {
             // arrange
@@ -81,6 +82,22 @@ namespace AseProda.Test
             // assert
             response.Should().HaveCount(2);
             response.Should().BeEquivalentTo(new List<EstadoSurtidor>() { new EstadoSurtidor() { Estado = EstadosSurtidor.Libre } , new EstadoSurtidor() { Estado = EstadosSurtidor.Bloqueado } });
+        }
+
+        [Test]
+        [Description("Test intended to check the correct behaviour of obtener historial de estado del los surtidores logics.")]
+        public async Task Obtener_Historial_Estado_Surtidores_Test()
+        {
+            // arrange
+            Surtidor surtidorTest1 = new Surtidor() { EstadoSurtidor = EstadosSurtidor.Libre, FechaSuministro = DateTime.UtcNow , SuministroReal = 50.0M};
+            Surtidor surtidorTest2 = new Surtidor() { EstadoSurtidor = EstadosSurtidor.Bloqueado, FechaSuministro = DateTime.UtcNow.AddDays(-1), SuministroReal = 50.0M };
+            IEnumerable<Surtidor> surtidores = new List<Surtidor>() { surtidorTest1, surtidorTest2 };
+
+            // act
+            var response = await _surtidorService.ObtenerHistorialSuministrosAsync(surtidores);
+
+            // assert
+            response.Should().HaveCount(2);
         }
     }
 }
