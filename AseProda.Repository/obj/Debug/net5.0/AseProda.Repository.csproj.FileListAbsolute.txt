@@ -1,5 +1,0 @@
-C:\Users\aitor\source\repos\AseProda.Library\AseProda.Repository\obj\Debug\net5.0\AseProda.Repository.csproj.AssemblyReference.cache
-C:\Users\aitor\source\repos\AseProda.Library\AseProda.Repository\obj\Debug\net5.0\AseProda.Repository.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\aitor\source\repos\AseProda.Library\AseProda.Repository\obj\Debug\net5.0\AseProda.Repository.AssemblyInfoInputs.cache
-C:\Users\aitor\source\repos\AseProda.Library\AseProda.Repository\obj\Debug\net5.0\AseProda.Repository.AssemblyInfo.cs
-C:\Users\aitor\source\repos\AseProda.Library\AseProda.Repository\obj\Debug\net5.0\AseProda.Repository.csproj.CoreCompileInputs.cache
