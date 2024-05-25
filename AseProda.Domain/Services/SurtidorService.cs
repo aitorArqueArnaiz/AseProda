@@ -26,6 +26,26 @@ namespace AseProda.Domain.Services
             return surtidores.Select(x => x.EstadoSurtidor).ToList();
         }
 
+        public async Task<IEnumerable<Suministro>> ObtenerHistorialSuministrosAsync(IEnumerable<Surtidor> surtidores)
+        {
+            var surtidoresPorBloquear = surtidores.Where(x => x.SuministroFinalizado);
+            foreach(var surtidor in surtidoresPorBloquear)
+            {
+                surtidor.SuministroPrefijado = 0.0M;
+                await BloquearSurtidorAsync(surtidor);
+            }
+
+            var suministroSurtidores = surtidores.Where(x => !x.SuministroFinalizado).Select(x => new Suministro() 
+            {
+                Surtidor = x,
+                FechaSuministro = x.FechaSuministro,
+                ImportePrefijado = x.SuministroPrefijado,
+                ImporteRealizado = x.SuministroReal
+            }).OrderBy(x => x.FechaSuministro).OrderByDescending(x => x.ImporteRealizado);
+
+            return suministroSurtidores;
+        }
+
         public async Task<decimal> PrefijarSurtidorAsync(Surtidor surtidor)
         {
             surtidor.SuministroPrefijado = default;

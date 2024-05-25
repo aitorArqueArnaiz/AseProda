@@ -62,5 +62,18 @@ namespace AseProda.Library
                 return null;
             }
         }
+
+        public async Task<IEnumerable<Suministro>> ObtenerHistoricoSuministrosAsync(IEnumerable<Surtidor> surtidores)
+        {
+            try
+            {
+                return await _surtidorService.ObtenerHistorialSuministrosAsync(surtidores);
+            }
+            catch (Exception error)
+            {
+                _logger.LogError($"Excepción durante la obtención del suministro historial de los surtidores. Error : {error.Message}");
+                return null;
+            }
+        }
     }
 }

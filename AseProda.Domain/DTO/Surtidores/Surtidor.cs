@@ -1,4 +1,5 @@
 ﻿using AseProda.Domain.Enums;
+using System;
 
 namespace AseProda.Domain.DTO.Surtidores
 {
@@ -8,5 +9,7 @@ namespace AseProda.Domain.DTO.Surtidores
         public EstadosSurtidor EstadoSurtidor { get; set; }
         public decimal SuministroPrefijado { get; set; }
         public decimal SuministroReal { get; set; }
+        public DateTime FechaSuministro { get; set; }
+        public bool SuministroFinalizado { get; set; }
     }
 }
