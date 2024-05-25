@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "gtqbH8CCwVaY6Yu9kMisrRCDO0c/Kg6YjhJkIVKiQkBm3LkidQQu3vKS7cnU8gVJufFeBVXvaRJtm0CQWBn5xQ==",
+  "dgSpecHash": "5iGcHwS0d1Hqd4XVwXkPvZKTf0Vj/ovElHrpgUiDDeHFb5pvEqm4lLzUUgJOwRHId3WWZJ8nFUHxuA2JJsmZmg==",
   "success": true,
   "projectFilePath": "C:\\Users\\aitor\\source\\repos\\AseProda.Library\\AseProda.Library\\AseProda.Library.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\aitor\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.1\\microsoft.extensions.dependencyinjection.abstractions.8.0.1.nupkg.sha512",
+    "C:\\Users\\aitor\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.1\\microsoft.extensions.logging.abstractions.8.0.1.nupkg.sha512",
+    "C:\\Users\\aitor\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
+    "C:\\Users\\aitor\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512"
+  ],
   "logs": []
 }
