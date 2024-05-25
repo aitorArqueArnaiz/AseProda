@@ -1,5 +1,6 @@
 ﻿using AseProda.Domain.DTO.Surtidores;
 using AseProda.Domain.Enums;
+using AseProda.Domain.Responses.Estados;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -9,8 +10,8 @@ namespace AseProda.Domain.Interfaces
     {
         Task<Surtidor> LiberarSurtidorAsync(Surtidor surtidor);
         Task<decimal> PrefijarSurtidorAsync(Surtidor surtidor);
-        Task<IEnumerable<EstadosSurtidor>> ObtenerEstadosSurtidoresAsync(IEnumerable<Surtidor> surtidores);
-        Task BloquearSurtidorAsync(Surtidor surtidor);
+        Task<IEnumerable<EstadoSurtidor>> ObtenerEstadosSurtidoresAsync(IEnumerable<Surtidor> surtidores);
+        Task<Surtidor> BloquearSurtidorAsync(Surtidor surtidor);
         Task<IEnumerable<Suministro>> ObtenerHistorialSuministrosAsync(IEnumerable<Surtidor> surtidores);
     }
 }

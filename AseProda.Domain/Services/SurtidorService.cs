@@ -1,6 +1,7 @@
 ﻿using AseProda.Domain.DTO.Surtidores;
 using AseProda.Domain.Enums;
 using AseProda.Domain.Interfaces;
+using AseProda.Domain.Responses.Estados;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,10 +10,12 @@ namespace AseProda.Domain.Services
 {
     public class SurtidorService : ISurtidorService
     {
-        public async Task BloquearSurtidorAsync(Surtidor surtidor)
+        public async Task<Surtidor> BloquearSurtidorAsync(Surtidor surtidor)
         {
             surtidor.EstadoSurtidor = EstadosSurtidor.Bloqueado;
             surtidor.SuministroPrefijado = 0.0M;
+
+            return surtidor;
         }
 
         public async Task<Surtidor> LiberarSurtidorAsync(Surtidor surtidor)
@@ -21,9 +24,9 @@ namespace AseProda.Domain.Services
             return surtidor;
         }
 
-        public async Task<IEnumerable<EstadosSurtidor>> ObtenerEstadosSurtidoresAsync(IEnumerable<Surtidor> surtidores)
+        public async Task<IEnumerable<EstadoSurtidor>> ObtenerEstadosSurtidoresAsync(IEnumerable<Surtidor> surtidores)
         {
-            return surtidores.Select(x => x.EstadoSurtidor).ToList();
+            return surtidores.Select(x => new EstadoSurtidor() { Estado = x.EstadoSurtidor, Id = x.Id }).ToList();
         }
 
         public async Task<IEnumerable<Suministro>> ObtenerHistorialSuministrosAsync(IEnumerable<Surtidor> surtidores)
@@ -48,7 +51,7 @@ namespace AseProda.Domain.Services
 
         public async Task<decimal> PrefijarSurtidorAsync(Surtidor surtidor)
         {
-            surtidor.SuministroPrefijado = default;
+            surtidor.SuministroPrefijado = 20.0M;
             return surtidor.SuministroPrefijado;
         }
     }

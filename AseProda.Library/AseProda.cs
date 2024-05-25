@@ -1,6 +1,7 @@
 ﻿using AseProda.Domain.DTO.Surtidores;
 using AseProda.Domain.Enums;
 using AseProda.Domain.Interfaces;
+using AseProda.Domain.Responses.Estados;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -50,7 +51,7 @@ namespace AseProda.Library
             }
         }
 
-        public async Task<IEnumerable<EstadosSurtidor>> ObtenerEstadoSurtidor(IEnumerable<Surtidor> surtidores)
+        public async Task<IEnumerable<EstadoSurtidor>> ObtenerEstadoSurtidor(IEnumerable<Surtidor> surtidores)
         {
             try
             {

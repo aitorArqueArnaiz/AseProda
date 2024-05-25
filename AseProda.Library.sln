@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AseProda.Library", "AseProd
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AseProda.Domain", "AseProda.Domain\AseProda.Domain.csproj", "{C6A24526-52DE-49C6-B64D-290291DADDA9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AseProda.Test", "AseProda.Test\AseProda.Test.csproj", "{E7104E75-57C5-4AE4-AF23-FB3079D904B2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{C6A24526-52DE-49C6-B64D-290291DADDA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6A24526-52DE-49C6-B64D-290291DADDA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6A24526-52DE-49C6-B64D-290291DADDA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7104E75-57C5-4AE4-AF23-FB3079D904B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7104E75-57C5-4AE4-AF23-FB3079D904B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7104E75-57C5-4AE4-AF23-FB3079D904B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7104E75-57C5-4AE4-AF23-FB3079D904B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
