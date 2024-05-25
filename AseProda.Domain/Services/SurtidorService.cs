@@ -12,25 +12,36 @@ namespace AseProda.Domain.Services
     {
         public async Task<Surtidor> BloquearSurtidorAsync(Surtidor surtidor)
         {
-            surtidor.EstadoSurtidor = EstadosSurtidor.Bloqueado;
-            surtidor.SuministroPrefijado = 0.0M;
+            if (surtidor.EstadoSurtidor != EstadosSurtidor.Bloqueado)
+            {
+                surtidor.EstadoSurtidor = EstadosSurtidor.Bloqueado;
+                surtidor.SuministroPrefijado = 0.0M;
+            }
 
             return surtidor;
         }
 
         public async Task<Surtidor> LiberarSurtidorAsync(Surtidor surtidor)
         {
-            surtidor.EstadoSurtidor = EstadosSurtidor.Libre;
+            if (surtidor.EstadoSurtidor != EstadosSurtidor.Libre)
+                surtidor.EstadoSurtidor = EstadosSurtidor.Libre;
+
             return surtidor;
         }
 
         public async Task<IEnumerable<EstadoSurtidor>> ObtenerEstadosSurtidoresAsync(IEnumerable<Surtidor> surtidores)
         {
+            if (surtidores == null || !surtidores.Any())
+                return null;
+
             return surtidores.Select(x => new EstadoSurtidor() { Estado = x.EstadoSurtidor, Id = x.Id }).ToList();
         }
 
         public async Task<IEnumerable<Suministro>> ObtenerHistorialSuministrosAsync(IEnumerable<Surtidor> surtidores)
         {
+            if (surtidores == null || !surtidores.Any())
+                return null;
+
             var surtidoresPorBloquear = surtidores.Where(x => x.SuministroFinalizado);
             foreach(var surtidor in surtidoresPorBloquear)
             {
